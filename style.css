@@ -1488,10 +1488,17 @@ body {
    ==================================== */
 @media (max-width: 1100px) {
     .projects-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero { flex-direction: column; text-align: center; padding-top: 140px; }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        align-items: center;
+    }
     .hero-content { max-width: 100%; }
     .hero-stats { justify-content: center; }
     .hero-cta { justify-content: center; }
+    .hero-3d-card { order: -1; }
     .about-container { flex-direction: column; gap: 50px; align-items: center; }
     .about-visual { width: 300px; height: 300px; }
 }
@@ -1501,7 +1508,7 @@ body {
         display: none;
         position: fixed;
         inset: 0;
-        background: rgba(2,6,23,0.97);
+        background: rgba(248,247,255,0.98);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -1509,16 +1516,40 @@ body {
         z-index: 999;
     }
     .nav-links.open { display: flex; }
-    .nav-link { font-size: 1.2rem; }
+    .nav-link {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+    }
     .hamburger { display: flex; }
 
-    .hero { padding: 120px 5% 60px; gap: 40px; }
-    .hero-3d-card { display: none; }
-    .hero-title { font-size: 2.8rem; }
-    .hero-stats { gap: 12px; }
-    .stat-card { min-width: 60px; }
+    .hero {
+        flex-direction: column;
+        padding: 100px 5% 60px;
+        gap: 30px;
+        text-align: center;
+        align-items: center;
+    }
+    .hero-content { max-width: 100%; order: 2; }
+    .hero-3d-card {
+        order: 1;
+        display: block;
+    }
+    .card-3d {
+        width: 260px;
+    }
+    .hero-title { font-size: 2.4rem; }
+    .hero-stats {
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .stat-card { min-width: 70px; flex: none; }
+    .hero-cta { justify-content: center; }
+    .hero-badge { margin: 0 auto 20px; }
+    .scroll-indicator { display: none; }
 
-    .section { padding: 80px 5%; }
+    .section { padding: 70px 5%; }
+    .section-title { font-size: 1.8rem; }
 
     .timeline::before { left: 20px; }
     .timeline-item,
@@ -1531,17 +1562,30 @@ body {
     .timeline-card { max-width: 100%; }
 
     .projects-grid { grid-template-columns: 1fr; }
-    .contact-container { grid-template-columns: 1fr; }
+    .contact-container { grid-template-columns: 1fr; gap: 40px; }
     .about-highlights { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .contact-form { padding: 24px; }
     .certs-grid { flex-direction: column; align-items: center; }
+
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 }
 
 @media (max-width: 480px) {
-    .hero-title { font-size: 2.2rem; }
-    .hero-stats { grid-template-columns: 1fr 1fr; display: grid; }
+    .hero { padding: 90px 4% 50px; }
+    .hero-title { font-size: 2rem; }
+    .card-3d { width: 240px; padding: 28px 20px; }
+    .avatar-placeholder { width: 80px; height: 80px; }
+    .card-avatar { width: 80px; height: 80px; }
+    .avatar-ring:nth-child(1) { width: 96px; height: 96px; }
+    .avatar-ring:nth-child(2) { width: 112px; height: 112px; }
     .about-visual { display: none; }
+    .btn { padding: 12px 24px; font-size: 0.9rem; }
+    .hero-cta { flex-direction: column; align-items: center; gap: 12px; }
+    .section { padding: 60px 4%; }
+    .contact-form { padding: 20px; }
+    .rstat-card { padding: 18px 24px; }
+    .timeline-card { padding: 20px; }
 }
 
 /* ====================================
