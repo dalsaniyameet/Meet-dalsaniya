@@ -167,10 +167,10 @@ function initParticleCanvas() {
             this.size = Math.random() * 2 + 0.5;
             this.speedX = (Math.random() - 0.5) * 0.6;
             this.speedY = (Math.random() - 0.5) * 0.6;
-            this.alpha = Math.random() * 0.5 + 0.1;
+            this.alpha = Math.random() * 0.3 + 0.05;
             this.color = Math.random() > 0.6
                 ? `rgba(124, 58, 237, ${this.alpha})`
-                : `rgba(6, 182, 212, ${this.alpha})`;
+                : `rgba(8, 145, 178, ${this.alpha})`;
             this.originalX = this.x;
             this.originalY = this.y;
         }
@@ -609,23 +609,7 @@ if (marqueeTrack) {
     });
 }
 
-/* ====================================
-   18. SECTION BACKGROUND GRADIENTS
-   (Dynamic color shift on scroll)
-   ==================================== */
-window.addEventListener('scroll', () => {
-    const scrollProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    const hue1 = Math.round(260 + scrollProgress * 40);
-    const hue2 = Math.round(190 + scrollProgress * 30);
-    document.documentElement.style.setProperty(
-        '--primary',
-        `hsl(${hue1}, 65%, 55%)`
-    );
-    document.documentElement.style.setProperty(
-        '--accent',
-        `hsl(${hue2}, 90%, 50%)`
-    );
-});
+/* Section background gradients disabled for light theme */
 
 /* ====================================
    19. GLITCH TEXT EFFECT (Hero name)
