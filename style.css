@@ -42,7 +42,6 @@ body {
     background: var(--bg-dark);
     color: var(--text-primary);
     overflow-x: hidden;
-    cursor: none;
 }
 
 /* ---- Scrollbar ---- */
@@ -395,7 +394,7 @@ body {
     font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
-    cursor: none;
+    cursor: pointer;
     border: none;
     font-family: 'Space Grotesk', sans-serif;
     letter-spacing: 0.3px;
