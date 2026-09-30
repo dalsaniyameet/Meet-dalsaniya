@@ -261,6 +261,21 @@ body {
     position: relative;
     overflow: hidden;
     gap: 40px;
+    flex-direction: row;
+}
+
+.hero-3d-card {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    animation: fadeInLeft 1s ease 0.5s both;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    flex: 1;
 }
 
 #heroCanvas {
@@ -435,12 +450,6 @@ body {
 .btn.full-width { width: 100%; justify-content: center; }
 
 /* 3D Card */
-.hero-3d-card {
-    position: relative;
-    z-index: 2;
-    flex-shrink: 0;
-    animation: fadeInRight 1s ease 0.5s both;
-}
 .card-3d {
     width: 300px;
     background: var(--glass);
@@ -1467,6 +1476,10 @@ body {
     from { opacity: 0; transform: translateX(60px); }
     to   { opacity: 1; transform: translateX(0); }
 }
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -1495,10 +1508,8 @@ body {
         padding-bottom: 60px;
         align-items: center;
     }
-    .hero-content { max-width: 100%; }
-    .hero-stats { justify-content: center; }
-    .hero-cta { justify-content: center; }
-    .hero-3d-card { order: -1; }
+    .hero-3d-card { order: 1; }
+    .hero-content { max-width: 100%; order: 2; }
     .about-container { flex-direction: column; gap: 50px; align-items: center; }
     .about-visual { width: 300px; height: 300px; }
 }
